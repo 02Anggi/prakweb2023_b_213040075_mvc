@@ -6,22 +6,22 @@
     </div>
 
     <div class="row">
-        <div class="col-6">
-
-        <button type="button" class="btn btn-primary mb-4 tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
+      <div class="col-lg-6">
+        <button type="button" class="btn btn-primary mb-3 tombolTambahData"  data-bs-toggle="modal" data-bs-target="#formModal">
+            Tambah Mahasiswa
         </button>
+      </div>
+    </div>
 
-            <h3>Daftar Mahasiswa</h3>
-            <ul class="list-group">
-                    <?php foreach ($data['mhs'] as $mhs): ?>
-                      <li class="list-group-item "><?=$mhs['nama'];?>
-                    <a href=" <?=BASEURL;?>/mahasiswa/hapus/<?=$mhs['id'];?>" class="badge text-bg-danger float-end me-2" onclick= "return confirm('Yakin ingin menghapus?')" >Hapus</a>
-                    <a href=" <?=BASEURL;?>/mahasiswa/ubah/<?=$mhs['id'];?>" class="badge text-bg-success float-end me-2 tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?=$mhs['id'];?>">Ubah</a>
-                    <a href=" <?=BASEURL;?>/mahasiswa/detail/<?=$mhs['id'];?>" class="badge text-bg-primary float-end me-2">Detail</a>
-                    </li>
-                    <?php endforeach; ?>
-            </ul>
+    <div class="row">
+      <div class="col-lg-6">
+        <form action="<?=BASEURL;?>/mahasiswa/cari" method="post">
+        <div class="input-group mb-2">
+          <input type="text" class="form-control" placeholder="Cari mahasiswa...." autocomplete="off" name="keyword" id="keyword" aria-describedby="button-addon2">
+          <button class="btn btn-primary" type="submit" id="tombolCari">Cari</button>
         </div>
+      </form>
+      </div>
     </div>
 
 </div>
